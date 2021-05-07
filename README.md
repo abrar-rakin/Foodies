@@ -1,2 +1,3 @@
-# js-cart-setup
-ADD ITEMS TO CART JAVASCRIPT PROJECT
+# Grandma's
+
+E-commerce website
