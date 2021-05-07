@@ -1,3 +1,3 @@
 # Grandma's
 
-E-commerce website
+E-commerce website made with HTMML, CSS and JavaScript.
