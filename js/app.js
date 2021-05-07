@@ -24,18 +24,48 @@ function showTotals() {
   document.getElementById("item-count").textContent = total.length;
 }
 
+function removeAll() {
+  var cartItems = document.getElementsByClassName("cart")[0];
+  let numItems =
+    cartItems.childElementCount -
+    2; /* Minus two because the buttons are elements too */
+  for (let i = 0; i < numItems; i++) {
+    setTimeout(() => {
+      cartItems.children[i].classList.add("empty-cart");
+    }, i * 50);
+  }
+  setTimeout(() => {
+    while (cartItems.childElementCount > 2) {
+      cartItems.removeChild(cartItems.children[0]);
+    }
+    showTotals();
+    cart.classList.toggle("show-cart");
+  }, numItems * 50);
+}
+
+// purchase button
 document
   .getElementsByClassName("btn-purchase")[0]
   .addEventListener("click", purchaseClicked);
 
 function purchaseClicked() {
-  alert("Thank you for your purchase");
-  var cartItems = document.getElementsByClassName("cart")[0];
-  while (cartItems.hasChildNodes()) {
-    cartItems.removeChild(cartItems.firstChild);
-  }
-  document.querySelector(".item-total").textContent = "0.00";
-  document.getElementById("item-count").textContent = 0;
+  const purchased = document.getElementById("confirmation-2");
+  purchased.classList.add("show-confirmation");
+  setTimeout(() => {
+    purchased.classList.remove("show-confirmation");
+  }, 3000);
+  //alert("Thank you for your purchase");
+
+  removeAll();
+}
+
+// clear cart button
+document
+  .getElementsByClassName("btn-clear")[0]
+  .addEventListener("click", clearCart);
+
+function clearCart() {
+  removeAll();
 }
 
 // delete item
@@ -120,7 +150,12 @@ for (var i = 0; i < removeCartItemButtons.length; i++) {
         cartItem
           .getElementsByClassName("fa-trash")[0]
           .addEventListener("click", removeCartItem);
-        alert("Item added to cart");
+        const confirm = document.getElementById("confirmation");
+        confirm.classList.add("show-confirmation");
+        setTimeout(() => {
+          confirm.classList.remove("show-confirmation");
+        }, 3000);
+        //alert("Item added to cart");
         showTotals();
       }
     });

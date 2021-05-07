@@ -250,3 +250,91 @@ body {
   right: 0;
   transform: translateX(60%);
 }
+
+/* confirmation - added to cart */
+#confirmation {
+  position: fixed;
+  background-color: #ffffcc;
+  z-index: -10;
+  opacity: 0;
+  bottom: 125px;
+  width: 80vw;
+  height: auto;
+  margin-left: 10vw;
+  border-radius: 25px;
+}
+#confirmation > p {
+  font-size: 2em;
+  text-align: center;
+  margin: 0;
+}
+.show-confirmation {
+  -webkit-animation: fade-in-out 4s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade-in-out 4s; /* Firefox < 16 */
+  -ms-animation: fade-in-out 4s; /* Internet Explorer */
+  -o-animation: fade-in-out 4s; /* Opera < 12.1 */
+  animation: fade-in-out 4s;
+}
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    z-index: -10;
+  }
+  25% {
+    opacity: 1;
+    z-index: 100;
+  }
+  50% {
+    opacity: 1;
+    z-index: 100;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
+/* purchase */
+
+/* confirmation - added to cart */
+#confirmation-2 {
+  position: fixed;
+  background-color: #ffffcc;
+  z-index: -10;
+  opacity: 0;
+  bottom: 125px;
+  width: 80vw;
+  height: auto;
+  margin-left: 10vw;
+  border-radius: 25px;
+}
+#confirmation-2 > p {
+  font-size: 2em;
+  text-align: center;
+  margin: 0;
+}
+.show-confirmation {
+  -webkit-animation: fade-in-out 4s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade-in-out 4s; /* Firefox < 16 */
+  -ms-animation: fade-in-out 4s; /* Internet Explorer */
+  -o-animation: fade-in-out 4s; /* Opera < 12.1 */
+  animation: fade-in-out 4s;
+}
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    z-index: -10;
+  }
+  25% {
+    opacity: 1;
+    z-index: 100;
+  }
+  50% {
+    opacity: 1;
+    z-index: 100;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
