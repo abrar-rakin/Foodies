@@ -24,6 +24,37 @@ function showTotals() {
   document.getElementById("item-count").textContent = total.length;
 }
 
+// filter buttons
+const store = document.getElementById("store-items");
+
+function filterStore(selection) {
+  if (selection === "all") {
+    for (let i = 0; i < store.childElementCount; i++) {
+      store.children[i].classList.remove("hide");
+      store.children[i].classList.add("show");
+    }
+  } else {
+    for (let i = 0; i < store.childElementCount; i++) {
+      if (store.children[i].dataset.item === selection) {
+        store.children[i].classList.remove("hide");
+        store.children[i].classList.add("show");
+      } else {
+        store.children[i].classList.remove("show");
+        store.children[i].classList.add("hide");
+      }
+    }
+  }
+}
+
+const filterBtn = document.querySelectorAll(".filter-btn");
+
+/* Clicking on the store filter buttons */
+filterBtn.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    filterStore(event.target.dataset.filter);
+  });
+});
+
 function removeAll() {
   var cartItems = document.getElementsByClassName("cart")[0];
   let numItems =

@@ -91,6 +91,13 @@ body {
   width: 0;
   overflow: hidden;
 }
+/* Store */
+.hide {
+  display: none !important;
+}
+.img-container > span {
+  cursor: pointer;
+}
 .show-cart {
   width: 18rem;
   padding: 2rem 1.5rem;
